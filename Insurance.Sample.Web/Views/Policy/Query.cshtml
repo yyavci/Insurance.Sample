@@ -1,0 +1,23 @@
+﻿@model QueryViewModel
+@using Insurance.Sample.Entity.Model
+@{
+    ViewBag.Title = "Sorgula";
+}
+
+<h2>TCKN ile Sorgula</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.LabelFor(f => f.Tckn)
+            @Html.EditorFor(f => f.Tckn, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Tckn)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <input type="submit" class="form-control btn-primary" name="btnSubmit" id="btnSubmit" value="Sorgula" />
+        </div>
+    </div>
+}

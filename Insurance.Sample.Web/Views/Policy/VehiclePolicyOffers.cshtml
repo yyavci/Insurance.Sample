@@ -1,0 +1,40 @@
+﻿@model PolicyOfferViewModel
+@using Insurance.Sample.Entity.Model
+
+@{
+    ViewBag.Title = "Teklifler";
+}
+
+<h2>Teklifler</h2>
+
+
+<div class="row">
+
+    <table class="table table-responsive table-striped">
+        <thead>
+            <tr>
+                <th>-</th>
+                <th>Firma</th>
+                <th>Tarih</th>
+                <th>Açıklama</th>
+                <th>Tutar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var offer in Model.Offers)
+            {
+                <tr>
+                    <td>
+                        <img src="@offer.CompanyLogoUrl" alt="@offer.CompanyName" style="width:50px;height:50px;" />
+                    </td>
+                    <td>@offer.CompanyName</td>
+                    <td>@offer.CreatedOnUtc.ToLocalTime().ToString()</td>
+                    <td>@offer.Description</td>
+                    <td>@offer.Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+

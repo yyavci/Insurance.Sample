@@ -1,0 +1,46 @@
+﻿@model VehicleInsuranceCreateModel
+@using Insurance.Sample.Entity.Model
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Teklif Al</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    @Html.HiddenFor(f => f.CustomerId)
+    @Html.HiddenFor(f => f.VehicleLicenseId)
+
+    <div class="row">
+        <div class="col-md-6">
+            @Html.LabelFor(f => f.Tckn)
+            @Html.EditorFor(f => f.Tckn, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Tckn)
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(f => f.Plate)
+            @Html.EditorFor(f => f.Plate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Plate)
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(f => f.SerialCode)
+            @Html.EditorFor(f => f.SerialCode, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.SerialCode)
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(f => f.SerialNo)
+            @Html.EditorFor(f => f.SerialNo, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.SerialNo)
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-primary btn-lg pull-right">Teklif Al</button>
+        </div>
+    </div>
+}
