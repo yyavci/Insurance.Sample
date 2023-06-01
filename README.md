@@ -1,1 +1,1 @@
-# Insurance.Sample
+# monolithic architecture template
