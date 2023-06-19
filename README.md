@@ -1,1 +1,1 @@
-# monolithic architecture template
+# monolithic architecture example
